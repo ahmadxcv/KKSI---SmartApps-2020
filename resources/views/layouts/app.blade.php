@@ -22,12 +22,13 @@
 </head>
 
 <body class="bg-light">
-    @include('layouts.navigasi')
+    @include('components.navigasi')
     <div class="container">
         <section class="content mt-3">
+            @include('components.alert')
             @yield('content')
         </section>
     </div>
-    @include('layouts.footer')
+    @include('components.footer')
 </body>
 </html>

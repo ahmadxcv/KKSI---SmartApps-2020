@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h5 class="card-title">Manajemen User</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Buka</a>
+                <a href="{{ route('users.index') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <div class="card-body">
                 <h5 class="card-title">Manajemen Produk</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Buka</a>
+                <a href="{{ route('produks.index') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
             <div class="card-body">
                 <h5 class="card-title">Transaksi</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Buka</a>
+                <a href="{{ route('transaksis.index') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>
     </div>

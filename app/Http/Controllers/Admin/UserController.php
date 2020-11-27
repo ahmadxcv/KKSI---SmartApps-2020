@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::latest()->paginate(5);
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -24,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**
@@ -35,7 +37,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:8',
+            'role' => 'required'
+        ]);
+
+        User::create($request->all());
+        return redirect()->route('users.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
@@ -46,7 +56,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.users.show', ['user', User::findOrFail($id)]);
     }
 
     /**
@@ -57,7 +67,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -69,7 +80,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'role' => 'required'
+        ]);
+        
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        return redirect()->route('users.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -80,6 +100,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('users.index')->with('success', 'Data Berhasil Dihapus');
     }
 }
