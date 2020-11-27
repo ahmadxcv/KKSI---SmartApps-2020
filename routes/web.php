@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ProdukController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +20,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
+Route::resource('users', UserController::class);
+Route::resource('produks', ProdukController::class);
