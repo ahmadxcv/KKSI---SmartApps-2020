@@ -23,8 +23,8 @@ Route::get('/', function () {
 });
 Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::resource('users', UserController::class);
-    Route::resource('produks', ProdukController::class);
-    Route::resource('soals', SoalController::class);
+    Route::resource('users', UserController::class)->middleware('can:isAdmin');
+    Route::resource('produks', ProdukController::class)->middleware('can:isAdmin');
+    Route::resource('soals', SoalController::class)->middleware('can:isGuru');
     Route::resource('transaksis', TransaksiController::class);
 });
