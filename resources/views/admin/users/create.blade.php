@@ -29,6 +29,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>
+                    <a href="{{ route('produks.index') }}" class="btn btn-info">Kembali</a>
                 </form>
             </div>
         </div>

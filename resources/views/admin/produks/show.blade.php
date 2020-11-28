@@ -10,28 +10,33 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="nama_barang">Nama</label>
-                        <input type="text" name="nama_barang" value="{{ $produk->nama_barang }}" id="nama_barang" class="form-control" required>
+                        <input type="text" name="nama_barang" value="{{ $produk->nama_barang }}" id="nama_barang" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="harga_barang">Harga</label>
-                        <input type="text" name="harga_barang" value="{{ $produk->harga_barang }}" id="harga_barang" class="form-control" required>
+                        <input type="text" name="harga_barang" value="{{ $produk->harga_barang }}" id="harga_barang" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="jumlah_barang">Jumlah</label>
-                        <input type="number" name="jumlah_barang" value="{{ $produk->jumlah_barang }}" id="jumlah_barang" class="form-control" required>
+                        <input type="number" name="jumlah_barang" value="{{ $produk->jumlah_barang }}" id="jumlah_barang" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
                         <input type="textarea" name="deskripsi" value="{{ $produk->deskripsi }}" id="deskripsi" cols="30" rows="10" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="gambar">Gambar</label>
-                        <input type="text" name="gambar" value="{{ $produk->gambar }}" hidden>
-                        <input type="file" name="gambar_baru" id="gambar_baru" class="form-control-file">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ route('produks.index') }}" class="btn btn-info">Batal</a>
+
+                    <a href="{{ route('produks.index') }}" class="btn btn-info">Kembali</a>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="gambar">Gambar</label>
+                    <img src="{{ asset('produk_gambar/'.$produk->gambar) }}" alt="gambar.jpg" width="200" height="200">
+                </div>
             </div>
         </div>
     </div>

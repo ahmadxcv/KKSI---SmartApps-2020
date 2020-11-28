@@ -14,6 +14,6 @@ class Produk extends Model
         'jumlah_barang',
         'harga_barang',
         'deskripsi',
-        'foto'
+        'gambar'
     ];
 }
