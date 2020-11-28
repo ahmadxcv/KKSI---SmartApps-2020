@@ -26,7 +26,7 @@ class SoalController extends Controller
      */
     public function create()
     {
-        //
+        return view('guru.soals.create');
     }
 
     /**
@@ -37,7 +37,15 @@ class SoalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'pertanyaan' => 'required',
+            'level' => 'required',
+            'poin' => 'required',
+            'user_id' => 'required'
+        ]);
+        Soal::create($request->all());
+        return redirect()->route('soals.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
@@ -48,7 +56,8 @@ class SoalController extends Controller
      */
     public function show($id)
     {
-        //
+        $soal = Soal::findOrFail($id);
+        return view('guru.soals.show', compact('soal'));
     }
 
     /**
@@ -59,7 +68,8 @@ class SoalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $soal = Soal::findOrFail($id);
+        return view('guru.soals.edit', compact('soal'));
     }
 
     /**
@@ -71,7 +81,16 @@ class SoalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'pertanyaan' => 'required',
+            'level' => 'required',
+            'poin' => 'required',
+            'user_id' => 'required'
+        ]);
+        $soal = Soal::findOrFail($id);
+        $soal->update($request->all());
+        return redirect()->route('soals.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -82,6 +101,8 @@ class SoalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $soal = Soal::findOrFail($id);
+        $soal->delete();
+        return redirect()->route('soals.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

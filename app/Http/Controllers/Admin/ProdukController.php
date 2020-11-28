@@ -110,7 +110,7 @@ class ProdukController extends Controller
             'deskripsi' => $request->deskripsi,
             'gambar' => $name
         ]);
-        return redirect()->route('produks.index')->with('success', 'Data Berhasil Disimpan');
+        return redirect()->route('produks.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**

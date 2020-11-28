@@ -19,6 +19,7 @@ class CreateSoalsTable extends Migration
             $table->string('pertanyaan');
             $table->string('level');
             $table->string('poin');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

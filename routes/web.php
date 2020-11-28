@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
-Route::resource('users', UserController::class);
-Route::resource('produks', ProdukController::class);
-Route::resource('soals', SoalController::class);
-Route::resource('transaksis', TransaksiController::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::resource('users', UserController::class);
+    Route::resource('produks', ProdukController::class);
+    Route::resource('soals', SoalController::class);
+    Route::resource('transaksis', TransaksiController::class);
+});

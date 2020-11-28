@@ -7,6 +7,7 @@
             <div class="card-body">
                 <form action="{{ route('soals.store') }}" method="POST">
                     @csrf
+                    <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                     <div class="form-group">
                         <label for="judul">Judul</label>
                         <input type="text" name="judul" id="judul" class="form-control" required>

@@ -7,19 +7,18 @@
             <div class="card-body">
                 <form action="{{ route('soals.update', $soal->id) }}" method="POST">
                     @csrf
-                    <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                     @method('PUT')
                     <div class="form-group">
                         <label for="judul">Judul</label>
-                        <input type="text" name="judul" value="{{ $soal->judul }}" id="judul" class="form-control" required>
+                        <input type="text" name="judul" value="{{ $soal->judul }}" id="judul" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="pertanyaan">Pertanyaan</label>
-                        <input type="text" name="pertanyaan" value="{{ $soal->pertanyaan }}" id="pertanyaan" class="form-control" required>
+                        <input type="text" name="pertanyaan" value="{{ $soal->pertanyaan }}" id="pertanyaan" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="level">Level</label>
-                        <select name="level" id="level" class="form-control" required>
+                        <select name="level" id="level" class="form-control" readonly>
                             <option selected value="{{ $soal->level }}">{{ $soal->level }}</option>
                             <option value="mudah">Mudah</option>
                             <option value="sedang">Sedang</option>
@@ -30,8 +29,7 @@
                         <label for="poin">Poin</label>
                         <input name="poin" id="poin" value="{{ $soal->poin }}" class="form-control" readonly>
                     </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ route('produks.index') }}" class="btn btn-info">Batal</a>
+                    <a href="{{ route('produks.index') }}" class="btn btn-info">Kembali</a>
                 </form>
             </div>
         </div>

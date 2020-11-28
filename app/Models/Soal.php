@@ -14,5 +14,6 @@ class Soal extends Model
         'pertanyaan',
         'level',
         'poin',
+        'user_id'
     ];
 }
