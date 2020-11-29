@@ -19,6 +19,7 @@ class CreateTransaksisTable extends Migration
             $table->integer('produk_id');
             $table->integer('jumlah');
             $table->integer('total');
+            $table->string('status')->default("proses");
             $table->timestamps();
         });
     }

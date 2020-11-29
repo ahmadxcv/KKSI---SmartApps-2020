@@ -14,5 +14,6 @@ class Transaksi extends Model
         'produk_id',
         'jumlah',
         'total',
+        'status'
     ];
 }
