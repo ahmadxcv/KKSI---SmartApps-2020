@@ -12,7 +12,8 @@
     <div class="col-8">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('transaksis.store') }}">
+                <form action="{{ route('transaksis.store') }}" method="POST">
+                    @csrf
                     <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                     <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
                     <div class="form-group row">

@@ -41,7 +41,7 @@ class TransaksiController extends Controller
             'status' => 'required'
         ]);
         $transaksi = Transaksi::findOrFail($id);
-        $transaksi->update();
+        $transaksi->update($request->all());
         return redirect()->route('transaksis.index')->with('success', 'Transaksi Berhasil Diperbaharui');
     }
 
