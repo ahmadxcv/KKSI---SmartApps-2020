@@ -31,11 +31,11 @@
     </div>
 </div>
 <div class="row mt-3">
-    <div class="col-12">
+    <div class="col-md-12 col-sm-12">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Transaksi Terbaru</h5>
-                <table class="table table-bordered">
+                <table class="table table-bordered table-hover table-responsive">
                     <thead>
                         <tr>
                             <td>#</td>

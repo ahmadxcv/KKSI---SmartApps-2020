@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-4">
+    <div class="col-md-4 col-xs-12">
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('produks.store') }}" method="POST" enctype="multipart/form-data">
@@ -32,10 +32,10 @@
             </div>
         </div>
     </div>
-    <div class="col-8">
+    <div class="col-md-8 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover table-responsive">
                     <thead>
                         <tr>
                             <th>#</th>

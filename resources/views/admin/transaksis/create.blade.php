@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     @foreach($produks as $produk)
-    <div class="col-3">
+    <div class="col-md-3 col-sm-12">
         <div class="card mb-2">
             <img src="{{ asset('produk_gambar/'.$produk->gambar) }}" alt="gambar.jpg" width="160" height="160" class="card-img-top">
             <div class="card-body">

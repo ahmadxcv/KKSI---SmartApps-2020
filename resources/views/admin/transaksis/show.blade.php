@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-4">
+    <div class="col-md-4 col-sm-12">
         <div class="card">
             <div class="car-body">
                 <img src="{{ asset('produk_gambar/'.$produk->gambar) }}" alt="gambar.jpg" width="300" height="300">
@@ -36,13 +36,13 @@
                     </div>
                     <div class="form-group row">
                         <label for="jumlah_barang" class="col-sm-4 col-form-label">Jumlah Tukar</label>
-                        <div class="col-sm-2">
+                        <div class="col-md-2 col-sm-6">
                             <input type="number" class="form-control" name="jumlah" id="jumlah" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="total" class="col-sm-4 col-form-label">Total Bayar</label>
-                        <div class="col-sm-6">
+                        <div class="col-md-6 col-sm-6">
                             <input type="text" class="form-control-plaintext" name="total" id="total" readonly>
                         </div>
                     </div>

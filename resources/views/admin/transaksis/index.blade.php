@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="row">
-    <div class="col-8">
+    <div class="col-md-8 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover table-responsive">
                     <thead>
                         <tr>
                             <th>#</th>

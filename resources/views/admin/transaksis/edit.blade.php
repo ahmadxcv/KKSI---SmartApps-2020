@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-6">
+    <div class="col-md-6 col-sm-12">
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('transaksis.update', $transaksi->id) }}" method="POST">
