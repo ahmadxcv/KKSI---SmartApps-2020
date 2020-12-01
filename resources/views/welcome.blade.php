@@ -174,9 +174,8 @@
                     <img src="{{ asset('img/logo-pinggir.png') }}" alt="brand.png" height="60" width="120">
                 </div>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link active" href="#">Tentang</a>
+                    <a class="nav-link" href="#">Kontak</a>
                 </nav>
             </div>
         </header>
