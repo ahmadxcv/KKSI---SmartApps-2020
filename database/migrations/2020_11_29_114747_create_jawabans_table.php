@@ -18,8 +18,8 @@ class CreateJawabansTable extends Migration
             $table->integer('user_id');
             $table->integer('soal_id');
             $table->string('jawaban_soal');
-            $table->string('hasil_periksa');
-            $table->string('status');
+            $table->string('hasil_periksa')->nullable();
+            $table->string('status')->default('Proses');
             $table->timestamps();
         });
     }

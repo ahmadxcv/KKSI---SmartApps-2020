@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\TransaksiController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Guru\SoalController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Siswa\JawabanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class)->middleware('can:isAdmin');
     Route::resource('produks', ProdukController::class)->middleware('can:isAdmin');
     Route::resource('soals', SoalController::class)->middleware('can:isGuru');
+    Route::resource('jawabans', JawabanController::class);
     Route::resource('transaksis', TransaksiController::class);
 });

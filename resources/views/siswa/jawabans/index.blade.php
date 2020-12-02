@@ -2,24 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-sm-6 col-md-6">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Manajemen Soal</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="{{ route('soals.index') }}" class="btn btn-primary">Buka</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Periksa Jawaban</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="{{ route('jawabans.index') }}" class="btn btn-primary">Buka</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
+    <div class="col-md-12 col-sm-12">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Jawaban Terbaru</h5>
@@ -32,6 +15,7 @@
                             <td>Soal</td>
                             <td>Jawaban</td>
                             <td>Status</td>
+                            <td>Aksi</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +30,14 @@
                             <td>{{ $jawaban->soal_id }}</td>
                             <td>{{ $jawaban->jawaban_soal }}</td>
                             <td>{{ $jawaban->status }}</td>
+                            <td class="btn-group">
+                                <a href="{{ route('jawabans.edit', $jawaban->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                <form action="{{ route('jawabans.destroy', $jawaban->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

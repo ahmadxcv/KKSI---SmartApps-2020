@@ -26,13 +26,9 @@
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <select name="status" id="status" class="form-control" required>
-                            <option value="proses">Proses</option>
-                            <option value="selesai">Selesai</option>
-                            <option selected value="{{ $transaksi->status }}">{{ $transaksi->status }}</option>
-                        </select>
+                        <input type="text" name="status" value="{{ $transaksi->status }}" readonly>
                     </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
                     <a href="{{ route('transaksis.index') }}" class="btn btn-info">Batal</a>
                 </form>
             </div>
