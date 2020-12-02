@@ -17,7 +17,6 @@ class CreateProfilsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('foto');
-            $table->string('poin');
             $table->timestamps();
         });
     }

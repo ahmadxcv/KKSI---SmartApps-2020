@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-2">
     <a class="navbar-brand" href="#">
-    <img src="img/bootstrap-solid.svg" width="30" height="30" alt="">
-    SiCerDik
+        <img src="{{ asset('img/logo-pinggir.png') }}" alt="brand.png" height="30" width="90">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,6 +27,11 @@
             </li>
             @endif
             @else
+            @can('isSiswa')
+            <li class="nav-item">
+                <span class="nav-link text-primary">Poin: {{ Auth::user()->poin }}</span>
+            </li>
+            @endcan
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}

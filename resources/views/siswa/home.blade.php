@@ -2,28 +2,19 @@
 
 @section('content')
 <div class="row">
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-12 col-md-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Manajemen User</h5>
+                <h5 class="card-title">Pilih Soal</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="#" class="btn btn-primary">Buka</a>
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-12 col-md-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Manajemen Produk</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Buka</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Transaksi</h5>
+                <h5 class="card-title">Tukar Poin</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="#" class="btn btn-primary">Buka</a>
             </div>
@@ -31,28 +22,23 @@
     </div>
 </div>
 <div class="row mt-3">
-    <div class="col-md-12 col-sm-12">
+    @foreach($soals as $soal)
+    <div class="col-md-6 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Transaksi Terbaru</h5>
-                <table class="table table-bordered table-hover table-responsive">
-                    <thead>
-                        <tr>
-                            <td>#</td>
-                            <td>Tanggal</td>
-                            <td>Nama</td>
-                            <td>Barang</td>
-                            <td>Jumlah</td>
-                            <td>Total</td>
-                            <td>Status</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
+                <div class="d-flex justify-content-between">
+                    <p>{{ $soal->created_at->diffForHumans() }}</p>
+                    <h5 class="card-subtitle text-muted">{{ $soal->poin }} Poin</h5>
+                </div>
+                <h4 class="card-title">{{ $soal->judul }}</h4>
+                <p class="card-text">{{ $soal->pertanyaan }}</p>
+                <div class="text-right">
+                    <a href="{{ route('soals.show', $soal->id) }}" class="btn btn-primary">Jawab</a>
+                </div>
             </div>
         </div>
     </div>
+    @endforeach
+    {{ $soals->links() }}
 </div>
 @endsection
