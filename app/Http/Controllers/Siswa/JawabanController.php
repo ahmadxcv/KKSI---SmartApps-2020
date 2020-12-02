@@ -72,7 +72,7 @@ class JawabanController extends Controller
         $jawaban = DB::table('jawabans')
             ->join('users', 'users.id', '=', 'jawabans.user_id')
             ->join('soals', 'soals.id', '=', 'jawabans.soal_id')
-            ->select('jawabans.*', 'users.name', 'users.id', 'soals.judul', 'soals.pertanyaan', 'soals.poin')
+            ->select('jawabans.*', 'users.name', 'users.poin As user_poin', 'soals.judul', 'soals.pertanyaan', 'soals.poin')
             ->where('jawabans.id', $id)
             ->first();
         return view('siswa.jawabans.edit', compact('jawaban'));
@@ -90,14 +90,10 @@ class JawabanController extends Controller
         $request->validate([
             'hasil_periksa' => 'required'
         ]);
-        if ($request->hasil_periksa == 'Benar') {
-            $hasil = $request->poin;
-        } else {
-            $hasil = 0;
-        }
-        $user = User::findOrFail($request->user_id);
+        $user_id = $request->user_id;
+        $user = User::findOrFail($user_id);
         $user->update([
-            'poin' => $user->poin + $hasil
+            'poin' => $request->total_poin
         ]);
         $jawaban = Jawaban::findOrFail($id);
         $jawaban->update([
@@ -115,6 +111,8 @@ class JawabanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jawaban = Jawaban::findOrFail($id);
+        $jawaban->delete();
+        return redirect()->route('jawabans.index')->with('success', 'Jawaban Berhasil Dihapus');
     }
 }

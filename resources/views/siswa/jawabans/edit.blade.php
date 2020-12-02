@@ -9,6 +9,7 @@
                     @csrf
                     @method('PUT')
                     <input type="text" name="user_id" value="{{ $jawaban->user_id }}" hidden>
+                    <input type="number" name="user_poin" id="user_poin" value="{{ $jawaban->user_poin }}" hidden>
                     <div class="form-group">
                         <label for="judul">Judul</label>
                         <input type="text" name="judul" value="{{ $jawaban->judul }}" class="form-control" readonly>
@@ -19,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label for="poin">Poin</label>
-                        <input type="text" name="poin" value="{{ $jawaban->poin }}" class="form-control" readonly>
+                        <input type="number" name="poin" id="poin" value="{{ $jawaban->poin }}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="jawaban_soal">Jawaban</label>
@@ -28,10 +29,12 @@
                     <div class="form-group">
                         <label for="hasil_periksa">Hasil Periksa</label>
                         <select name="hasil_periksa" id="hasil_periksa" class="form-control" required>
+                            <option selected value="">== Pilih ==</option>
                             <option value="Benar">Benar</option>
                             <option value="Salah">Salah</option>
                         </select>
                     </div>
+                    <input type="number" name="total_poin" id="total_poin" required>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <a href="{{ route('jawabans.index') }}" class="btn btn-info">Batal</a>
                 </form>
@@ -39,4 +42,18 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+<script>
+    var poin = document.getElementById("poin").value;
+    var user_poin = document.getElementById("user_poin").value
+    document.getElementById('hasil_periksa').addEventListener('change', function(e) {
+        if (e.target.value === "Benar") {
+            document.getElementById("total_poin").value = parseInt(user_poin) + parseInt(poin);
+        } else {
+            document.getElementById("total_poin").value = parseInt(user_poin) + 0;
+        }
+    });
+
+</script>
 @endsection

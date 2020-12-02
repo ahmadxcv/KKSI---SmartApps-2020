@@ -43,6 +43,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Poin</th>
                             <th style="width:80px">Aksi</th>
                         </tr>
                     </thead>
@@ -56,6 +57,7 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role }}</td>
+                            <td>{{ $user->poin }}</td>
                             <td class="btn-group">
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST">
