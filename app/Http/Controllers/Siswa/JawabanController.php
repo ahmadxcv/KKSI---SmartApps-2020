@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Siswa;
 use App\Http\Controllers\Controller;
 use App\Models\Jawaban;
 use App\Models\Soal;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class JawabanController extends Controller
 {
@@ -67,7 +69,13 @@ class JawabanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jawaban = DB::table('jawabans')
+            ->join('users', 'users.id', '=', 'jawabans.user_id')
+            ->join('soals', 'soals.id', '=', 'jawabans.soal_id')
+            ->select('jawabans.*', 'users.name', 'users.id', 'soals.judul', 'soals.pertanyaan', 'soals.poin')
+            ->where('jawabans.id', $id)
+            ->first();
+        return view('siswa.jawabans.edit', compact('jawaban'));
     }
 
     /**
@@ -79,7 +87,24 @@ class JawabanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'hasil_periksa' => 'required'
+        ]);
+        if ($request->hasil_periksa == 'Benar') {
+            $hasil = $request->poin;
+        } else {
+            $hasil = 0;
+        }
+        $user = User::findOrFail($request->user_id);
+        $user->update([
+            'poin' => $user->poin + $hasil
+        ]);
+        $jawaban = Jawaban::findOrFail($id);
+        $jawaban->update([
+            'hasil_periksa' => $request->hasil_periksa,
+            'status' => 'Selesai'
+        ]);
+        return redirect()->route('jawabans.index')->with('success', 'Jawaban Berhasil Diperbaharui');
     }
 
     /**
