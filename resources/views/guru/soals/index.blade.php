@@ -37,41 +37,43 @@
     <div class="col-md-8 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <table class="table table-bordered table-hover table-responsive">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Judul</th>
-                            <th>Pertanyaan</th>
-                            <th>Level</th>
-                            <th>Poin</th>
-                            <th style="width:80px">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                        $no = 1;
-                        @endphp
-                        @foreach($soals as $soal)
-                        <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $soal->judul }}</td>
-                            <td>{{ $soal->pertanyaan }}</td>
-                            <td>{{ $soal->level }}</td>
-                            <td>{{ $soal->poin }}</td>
-                            <td class="btn-group">
-                                <a href="{{ route('soals.edit', $soal->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('soals.destroy', $soal->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                {{ $soals->links() }}
+                <div class="table-responsive-sm">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Judul</th>
+                                <th>Pertanyaan</th>
+                                <th>Level</th>
+                                <th>Poin</th>
+                                <th style="width:80px">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $no = 1;
+                            @endphp
+                            @foreach($soals as $soal)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $soal->judul }}</td>
+                                <td>{{ $soal->pertanyaan }}</td>
+                                <td>{{ $soal->level }}</td>
+                                <td>{{ $soal->poin }}</td>
+                                <td class="btn-group">
+                                    <a href="{{ route('soals.edit', $soal->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                    <form action="{{ route('soals.destroy', $soal->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    {{ $soals->links() }}
+                </div>
             </div>
         </div>
     </div>

@@ -35,41 +35,43 @@
     <div class="col-md-8 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <table class="table table-bordered table-hover table-responsive">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nama</th>
-                            <th>Harga</th>
-                            <th>Jumlah</th>
-                            <th>Gambar</th>
-                            <th style="width:80px">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                        $no = 1;
-                        @endphp
-                        @foreach($produks as $produk)
-                        <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $produk->nama_barang }}</td>
-                            <td>{{ $produk->harga_barang }}</td>
-                            <td>{{ $produk->jumlah_barang }}</td>
-                            <td><img src="{{ asset('produk_gambar/'.$produk->gambar) }}" alt="gambar.jpg" width="20" height="20"></td>
-                            <td class="btn-group">
-                                <a href="{{ route('produks.edit', $produk->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('produks.destroy', $produk->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                {{ $produks->links() }}
+                <div class="table-responsive-sm">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nama</th>
+                                <th>Harga</th>
+                                <th>Jumlah</th>
+                                <th>Gambar</th>
+                                <th style="width:80px">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $no = 1;
+                            @endphp
+                            @foreach($produks as $produk)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $produk->nama_barang }}</td>
+                                <td>{{ $produk->harga_barang }}</td>
+                                <td>{{ $produk->jumlah_barang }}</td>
+                                <td><img src="{{ asset('produk_gambar/'.$produk->gambar) }}" alt="gambar.jpg" width="20" height="20"></td>
+                                <td class="btn-group">
+                                    <a href="{{ route('produks.edit', $produk->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                    <form action="{{ route('produks.destroy', $produk->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    {{ $produks->links() }}
+                </div>
             </div>
         </div>
     </div>

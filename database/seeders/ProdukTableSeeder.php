@@ -18,7 +18,7 @@ class ProdukTableSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Buku',
             'jumlah_barang' => 10,
-            'harga_barang' => 100,
+            'harga_barang' => 5,
             'deskripsi' => '',
             'gambar' => '1.jpg',
             'created_at' => Carbon::now()
