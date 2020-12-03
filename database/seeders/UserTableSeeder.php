@@ -46,7 +46,7 @@ class UserTableSeeder extends Seeder
                 'created_at' => Carbon::now()
             ]);
         }
-        for ($i = 1; $i < 100; $i++) {
+        for ($i = 1; $i < 50; $i++) {
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->freeEmail,
