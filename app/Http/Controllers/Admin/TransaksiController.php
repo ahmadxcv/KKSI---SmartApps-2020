@@ -66,7 +66,7 @@ class TransaksiController extends Controller
         $transaksi = DB::table('transaksis')
             ->join('users', 'users.id', '=', 'transaksis.user_id')
             ->join('produks', 'produks.id', '=', 'transaksis.produk_id')
-            ->select('transaksis.*', 'users.name', 'users.poin As user_poin', 'produks.nama_barang')
+            ->select('transaksis.*', 'users.name', 'users.poin As user_poin', 'produks.nama_barang', 'produks.jumlah_barang')
             ->where('transaksis.id', $id)
             ->first();
         return view('admin.transaksis.edit', compact('transaksi'));
