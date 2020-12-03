@@ -19,6 +19,7 @@
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select name="level" id="level" class="form-control">
+                            <option selected value="">== Pilih Level ==</option>
                             <option value="mudah">Mudah</option>
                             <option value="sedang">Sedang</option>
                             <option value="sulit">Sulit</option>
@@ -48,5 +49,6 @@
             document.getElementById("poin").value = 30;
         }
     });
+
 </script>
 @endsection

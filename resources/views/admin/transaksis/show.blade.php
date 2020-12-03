@@ -37,7 +37,7 @@
                     <div class="form-group row">
                         <label for="jumlah_barang" class="col-sm-4 col-form-label">Jumlah Tukar</label>
                         <div class="col-md-2 col-sm-6">
-                            <input type="number" class="form-control" name="jumlah" id="jumlah" required>
+                            <input type="number" class="form-control" name="jumlah" id="jumlah" min="0" max="10" maxlength="2" required>
                         </div>
                     </div>
                     <div class="form-group row">

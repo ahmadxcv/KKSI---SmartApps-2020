@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Produk;
 use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
 class TransaksiController extends Controller
@@ -14,7 +16,12 @@ class TransaksiController extends Controller
     public function index()
     {
         if (Gate::allows('isAdmin')) {
-            $transaksis = Transaksi::latest()->paginate(10);
+            $transaksis = DB::table('transaksis')
+            ->join('users', 'users.id', '=', 'transaksis.user_id')
+            ->join('produks', 'produks.id', '=', 'transaksis.produk_id')
+            ->select('transaksis.*', 'users.name', 'users.poin As user_poin', 'produks.nama_barang')
+            ->latest()
+            ->paginate(10);
             return view('admin.transaksis.index', compact('transaksis'));
         } else {
             return abort(403);
@@ -56,12 +63,22 @@ class TransaksiController extends Controller
     }
     public function edit($id)
     {
-        $transaksi = Transaksi::findOrFail($id);
+        $transaksi = DB::table('transaksis')
+            ->join('users', 'users.id', '=', 'transaksis.user_id')
+            ->join('produks', 'produks.id', '=', 'transaksis.produk_id')
+            ->select('transaksis.*', 'users.name', 'users.poin As user_poin', 'produks.nama_barang')
+            ->where('transaksis.id', $id)
+            ->first();
         return view('admin.transaksis.edit', compact('transaksi'));
     }
 
     public function update(Request $request, $id)
     {
+        $user_id = $request->user_id;
+        $user = User::findOrFail($user_id);
+        $user->update([
+            'poin' => $request->total_poin
+        ]);
         $transaksi = Transaksi::findOrFail($id);
         $transaksi->update([
             'status' => 'selesai'

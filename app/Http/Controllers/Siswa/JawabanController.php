@@ -18,7 +18,12 @@ class JawabanController extends Controller
      */
     public function index()
     {
-        $jawabans = Jawaban::latest()->paginate(10);
+        $jawabans = DB::table('jawabans')
+            ->join('users', 'users.id', '=', 'jawabans.user_id')
+            ->join('soals', 'soals.id', '=', 'jawabans.soal_id')
+            ->select('jawabans.*', 'users.name', 'users.poin As user_poin', 'soals.judul', 'soals.pertanyaan', 'soals.poin')
+            ->latest()
+            ->paginate(10);
         return view('siswa.jawabans.index', compact('jawabans'));
     }
 

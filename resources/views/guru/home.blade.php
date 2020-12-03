@@ -41,9 +41,9 @@
                         @foreach($jawabans as $jawaban)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $jawaban->created_at }}</td>
-                            <td>{{ $jawaban->user_id }}</td>
-                            <td>{{ $jawaban->soal_id }}</td>
+                            <td>{{ date('d/m/Y', strtotime($jawaban->created_at)) }}</td>
+                            <td>{{ $jawaban->name }}</td>
+                            <td>{{ $jawaban->pertanyaan }}</td>
                             <td>{{ $jawaban->jawaban_soal }}</td>
                             <td>{{ $jawaban->status }}</td>
                         </tr>

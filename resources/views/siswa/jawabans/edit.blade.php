@@ -29,12 +29,12 @@
                     <div class="form-group">
                         <label for="hasil_periksa">Hasil Periksa</label>
                         <select name="hasil_periksa" id="hasil_periksa" class="form-control" required>
-                            <option selected value="">== Pilih ==</option>
+                            <option selected value="">== Pilih Benar/Salah ==</option>
                             <option value="Benar">Benar</option>
                             <option value="Salah">Salah</option>
                         </select>
                     </div>
-                    <input type="number" name="total_poin" id="total_poin" required>
+                    <input type="number" name="total_poin" id="total_poin" required hidden>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <a href="{{ route('jawabans.index') }}" class="btn btn-info">Batal</a>
                 </form>

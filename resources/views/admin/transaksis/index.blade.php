@@ -25,9 +25,9 @@
                         @foreach($transaksis as $transaksi)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $transaksi->created_at }}</td>
-                            <td>{{ $transaksi->nama }}</td>
-                            <td>{{ $transaksi->produk }}</td>
+                            <td>{{ date('d/m/Y', strtotime($transaksi->created_at)) }}</td>
+                            <td>{{ $transaksi->name }}</td>
+                            <td>{{ $transaksi->nama_barang }}</td>
                             <td>{{ $transaksi->jumlah }}</td>
                             <td>{{ $transaksi->total }}</td>
                             <td>{{ $transaksi->status }}</td>
