@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->paginate(5);
+        $users = User::latest()->paginate(10);
         return view('admin.users.index', compact('users'));
     }
 
@@ -87,7 +87,7 @@ class UserController extends Controller
             'password' => 'required',
             'role' => 'required'
         ]);
-        
+
         $user = User::findOrFail($id);
         $user->update($request->all());
         return redirect()->route('users.index')->with('success', 'Data Berhasil Diubah');
