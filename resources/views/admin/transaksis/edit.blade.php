@@ -27,10 +27,10 @@
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <input type="text" name="status" value="{{ $transaksi->status }}" readonly>
+                        <input type="text" name="status" value="{{ $transaksi->status }}" class="form-control" readonly>
                     </div>
                     <input type="text" name="user_poin" id="user_poin" value="{{ $transaksi->user_poin }}" hidden readonly required>
-                    <input type="text" name="total_poin" id="total_poin" hidden readonly required>
+                    <input type="text" name="total_poin" id="total_poin" readonly required>
                     <button type="submit" class="btn btn-primary">Konfirmasi</button>
                     <a href="{{ route('transaksis.index') }}" class="btn btn-info">Batal</a>
                 </form>
@@ -43,7 +43,6 @@
 <script>
     var total = document.getElementById("total").value;
     var user_poin = document.getElementById("user_poin").value
-    var total_poin = document.getElementById("total_poin").value
-    total_poin = parseInt(user_poin) - parseInt(total);
+    document.getElementById("total_poin").value = parseInt(user_poin) - parseInt(total);
 </script>
 @endsection

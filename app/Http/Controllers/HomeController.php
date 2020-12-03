@@ -13,7 +13,12 @@ class HomeController extends Controller
     public function index()
     {
         if (Gate::allows('isAdmin')) {
-            $transaksis = Transaksi::latest()->paginate(10);
+            $transaksis = DB::table('transaksis')
+            ->join('users', 'users.id', '=', 'transaksis.user_id')
+            ->join('produks', 'produks.id', '=', 'transaksis.produk_id')
+            ->select('transaksis.*', 'users.name', 'users.poin As user_poin', 'produks.nama_barang')
+            ->latest()
+            ->paginate(10);
             return view('admin.home', compact('transaksis'));
         } elseif (Gate::allows('isGuru')) {
             $jawabans = DB::table('jawabans')

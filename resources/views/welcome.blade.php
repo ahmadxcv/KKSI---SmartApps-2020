@@ -38,162 +38,162 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        /*
+      }
+      /*
  * Globals
  */
 
-        /* Links */
-        a,
-        a:focus,
-        a:hover {
-            color: #fff;
-        }
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
 
-        /* Custom default button */
-        .btn-secondary,
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-            color: #333;
-            text-shadow: none;
-            /* Prevent inheritance from `body` */
-            background-color: #fff;
-            border: .05rem solid #fff;
-        }
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: white;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: black;
+  border: .05rem solid #fff;
+}
 
 
-        /*
+/*
  * Base structure
  */
 
-        html,
-        body {
-            height: 100%;
-            background-color: #333;
-        }
+html,
+body {
+  height: 100%;
+  background: #778899;
+}
 
-        body {
-            display: -ms-flexbox;
-            display: flex;
-            color: #fff;
-            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-            box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-        }
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
 
-        .cover-container {
-            max-width: 42em;
-        }
+.cover-container {
+  max-width: 42em;
+}
 
 
-        /*
+/*
  * Header
  */
-        .masthead {
-            margin-bottom: 2rem;
-        }
+.masthead {
+  margin-bottom: 2rem;
+}
 
-        .masthead-brand {
-            margin-bottom: 0;
-        }
+.masthead-brand {
+  margin-bottom: 0;
+}
 
-        .nav-masthead .nav-link {
-            padding: .25rem 0;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .5);
-            background-color: transparent;
-            border-bottom: .25rem solid transparent;
-        }
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: blue;
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
 
-        .nav-masthead .nav-link:hover,
-        .nav-masthead .nav-link:focus {
-            border-bottom-color: rgba(255, 255, 255, .25);
-        }
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
 
-        .nav-masthead .nav-link+.nav-link {
-            margin-left: 1rem;
-        }
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
 
-        .nav-masthead .active {
-            color: #fff;
-            border-bottom-color: #fff;
-        }
+.nav-masthead .active {
+  color: black;
+  border-bottom-color: white;
+}
 
-        @media (min-width: 48em) {
-            .masthead-brand {
-                float: left;
-            }
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
 
-            .nav-masthead {
-                float: right;
-            }
-        }
 
-
-        /*
+/*
  * Cover
  */
-        .cover {
-            padding: 0 1.5rem;
-        }
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
 
-        .cover .btn-lg {
-            padding: .75rem 1.25rem;
-            font-weight: 700;
-        }
 
-
-        /*
+/*
  * Footer
  */
-        .mastfoot {
-            color: rgba(255, 255, 255, .5);
-        }
-
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
     </style>
 </head>
 
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-            <div class="inner">
-                <div class="masthead-brand">
-                    <img src="{{ asset('img/logo-pinggir.png') }}" alt="brand.png" height="60" width="120">
-                </div>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="/tentang">Tentang</a>
-                    <a class="nav-link" href="/kontak">Kontak</a>
-                </nav>
-            </div>
-        </header>
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <img src="{{ asset('img/logo.pinggir.png') }}" alt="" height="60" widht="120" class="masthead-brand">
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="#">Tentang</a>
+        <a class="nav-link active" href="#">Kontak</a>
 
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-                <a href="{{ route('login') }}" class="btn btn-lg btn-primary">Masuk</a>
-                <a href="{{ 'register' }}" class="btn btn-lg btn-info">Daftar</a>
-            </p>
-        </main>
-
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-        </footer>
+      </nav>
     </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">SiCerDik</h1>
+    <p class="lead">Jadikan Belajarmu lebih mudah dan menyenangkan bersama SiCerDik.</p>
+    <p class="lead">sicerdik merupakan aplikasi yang dapat membantu siswa/i,
+    juga dapat menghubungkan antara guru dan siswa melalui aplikasi ini
+    dalam kegitan proses pembelajaran dan memepermudah para guru dalam penugasan, penilaian, dan evaluasi.
+    selain itu aplikasi ini bisa meningkatkan minat belajar siswa, karna terdapat sebuah reward dalam aplikasi ini
+    dengan cara penukaran poin yang di peroleh dari pengisian soal.</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn btn-outline-light border-dark ">Masuk</a>
+      <a href="#" class="btn btn-lg btn btn-outline-light border-dark">Daftar</a>
+    </p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </div>
+  </footer>
+</div>
 </body>
 </html>

@@ -38,19 +38,33 @@
                 <table class="table table-bordered table-hover table-responsive">
                     <thead>
                         <tr>
-                            <td>#</td>
-                            <td>Tanggal</td>
-                            <td>Nama</td>
-                            <td>Barang</td>
-                            <td>Jumlah</td>
-                            <td>Total</td>
-                            <td>Status</td>
+                            <th>#</th>
+                            <th>Tanggal</th>
+                            <th>Nama</th>
+                            <th>Produk</th>
+                            <th>Jumlah</th>
+                            <th>Total</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        @php
+                        $no = 1;
+                        @endphp
+                        @foreach($transaksis as $transaksi)
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ date('d/m/Y', strtotime($transaksi->created_at)) }}</td>
+                            <td>{{ $transaksi->name }}</td>
+                            <td>{{ $transaksi->nama_barang }}</td>
+                            <td>{{ $transaksi->jumlah }}</td>
+                            <td>{{ $transaksi->total }}</td>
+                            <td>{{ $transaksi->status }}</td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{ $transaksis->links() }}
             </div>
         </div>
     </div>
