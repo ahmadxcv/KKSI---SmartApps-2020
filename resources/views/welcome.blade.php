@@ -184,8 +184,8 @@ body {
     selain itu aplikasi ini bisa meningkatkan minat belajar siswa, karna terdapat sebuah reward dalam aplikasi ini
     dengan cara penukaran poin yang di peroleh dari pengisian soal.</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn btn-outline-light border-dark ">Masuk</a>
-      <a href="#" class="btn btn-lg btn btn-outline-light border-dark">Daftar</a>
+      <a href="{{ route('login') }}" class="btn btn-lg btn btn-outline-light border-dark ">Masuk</a>
+      <a href="{{ route('register') }}" class="btn btn-lg btn btn-outline-light border-dark">Daftar</a>
     </p>
   </main>
 
