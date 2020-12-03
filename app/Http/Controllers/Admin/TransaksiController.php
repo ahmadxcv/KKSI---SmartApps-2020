@@ -79,6 +79,11 @@ class TransaksiController extends Controller
         $user->update([
             'poin' => $request->total_poin
         ]);
+        $produk_id = $request->produk_id;
+        $produk = Produk::findOrFail($produk_id);
+        $produk->update([
+            'jumlah_barang' => $request->sisa_barang
+        ]);
         $transaksi = Transaksi::findOrFail($id);
         $transaksi->update([
             'status' => 'selesai'
