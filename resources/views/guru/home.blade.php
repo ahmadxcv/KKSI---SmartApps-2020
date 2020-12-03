@@ -6,7 +6,7 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">Manajemen Soal</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Di menu ini anda dapat mengelola data soal yang akan disajikan kepada siswa.</p>
                 <a href="{{ route('soals.index') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Periksa Jawaban</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Di menu ini anda dapat mengelola data soal yang telah dijawab oleh siswa.</p>
                 <a href="{{ route('jawabans.index') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>

@@ -6,14 +6,14 @@
         <div class="card mb-2">
             <div class="card-body">
                 <h5 class="card-title">Pilih Soal</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Di menu ini anda dapat memilih soal- soal yang ada.</p>
                 <a href="#" class="btn btn-primary">Buka</a>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tukar Poin</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Di menu ini anda dapat menukar poin anda dengan produk- produk yang telah disediakan.</p>
                 <a href="{{ route('transaksis.create') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>
