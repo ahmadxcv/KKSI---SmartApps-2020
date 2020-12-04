@@ -46,7 +46,6 @@
                                 <th>Jumlah</th>
                                 <th>Total</th>
                                 <th>Status</th>
-                                <th style="width:80px">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

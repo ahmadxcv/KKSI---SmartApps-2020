@@ -239,31 +239,83 @@
     <section class="showcase">
         <div class="container-fluid p-0">
         <div class="row no-gutters">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 text-white showcase-img">
+                  <img src="{{ asset('img/developer/pembimbing.png') }}" alt="">
+                </div>
                 <div class="col-lg-6 my-auto showcase-text">
                     <h2>Pembimbing</h2>
-                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                    <div class="form-group">
+                      <label for="">Nama</label>
+                      <input type="text" value="Abdul Hakim M.A., S.Kom" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Tempat Tanggal Lahir</label>
+                      <input type="text" value="Bandung, 23 April 1995" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Motto</label>
+                      <input type="text" value="Sacangreud Pageuh, Sagolek Pangkek" class="form-control" style="font-style:italic" disabled>
+                    </div>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img">
+                  <img src="{{ asset('img/developer/') }}" alt="">
+                </div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <h2>UI / UX Designer</h2>
-                    <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                    <div class="form-group">
+                      <label for="">Nama</label>
+                      <input type="text" value="Yulia " class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Tempat Tanggal Lahir</label>
+                      <input type="text" value="" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Motto</label>
+                      <input type="text" value="" class="form-control" style="font-style:italic" disabled>
+                    </div>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 text-white showcase-img">
+                <img src="{{ asset('img/developer/') }}" alt="">
+                </div>
                 <div class="col-lg-6 my-auto showcase-text">
                     <h2>Frontend</h2>
-                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                    <div class="form-group">
+                      <label for="">Nama</label>
+                      <input type="text" value="Muhammad Taufik" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Tempat Tanggal Lahir</label>
+                      <input type="text" value="" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Motto</label>
+                      <input type="text" value="" class="form-control" style="font-style:italic" disabled>
+                    </div>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img">
+                  <img src="{{ asset('img/developer/') }}" alt="">
+                </div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <h2>Backend</h2>
-                    <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                    <div class="form-group">
+                      <label for="">Nama</label>
+                      <input type="text" value="Muhammad Fauzan F." class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Tempat Tanggal Lahir</label>
+                      <input type="text" value="Sukabumi, 19 Desember 2001" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Motto</label>
+                      <input type="text" value="" class="form-control" style="font-style:italic" disabled>
+                    </div>
                 </div>
             </div>
         </div>
@@ -274,43 +326,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Contact</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fab fa-facebook fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-instagram fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; SiCerDik 2020. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
