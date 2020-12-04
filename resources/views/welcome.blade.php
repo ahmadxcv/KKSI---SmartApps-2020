@@ -240,7 +240,7 @@
         <div class="container-fluid p-0">
         <div class="row no-gutters">
                 <div class="col-lg-6 text-white showcase-img">
-                  <img src="{{ asset('img/developer/pembimbing.png') }}" alt="">
+                  <img src="{{ asset('img/developer/pembimbing.png') }}" alt="" width="400" height="500">
                 </div>
                 <div class="col-lg-6 my-auto showcase-text">
                     <h2>Pembimbing</h2>
@@ -260,7 +260,7 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-lg-6 order-lg-2 text-white showcase-img">
-                  <img src="{{ asset('img/developer/') }}" alt="">
+                  <img src="{{ asset('img/developer/ui.jpg') }}" alt="" width="400" height="500">
                 </div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <h2>UI / UX Designer</h2>
@@ -280,7 +280,7 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-lg-6 text-white showcase-img">
-                <img src="{{ asset('img/developer/') }}" alt="">
+                <img src="{{ asset('img/developer/') }}" alt="" width="400" height="500">
                 </div>
                 <div class="col-lg-6 my-auto showcase-text">
                     <h2>Frontend</h2>
@@ -300,7 +300,7 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-lg-6 order-lg-2 text-white showcase-img">
-                  <img src="{{ asset('img/developer/') }}" alt="">
+                  <img src="{{ asset('img/developer/backend.jpg') }}" alt="" width="400" height="500">
                 </div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <h2>Backend</h2>
