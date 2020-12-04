@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h5 class="card-title">Pilih Soal</h5>
                 <p class="card-text">Di menu ini anda dapat memilih soal- soal yang ada.</p>
-                <a href="#" class="btn btn-primary">Buka</a>
+                <a href="{{ route('jawabans.create') }}" class="btn btn-primary">Buka</a>
             </div>
         </div>
         <div class="card">

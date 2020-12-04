@@ -280,7 +280,7 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-lg-6 text-white showcase-img">
-                <img src="{{ asset('img/developer/') }}" alt="" width="400" height="500">
+                <img src="{{ asset('img/developer/frontend.jpeg') }}" alt="" width="400" height="500">
                 </div>
                 <div class="col-lg-6 my-auto showcase-text">
                     <h2>Frontend</h2>
@@ -290,11 +290,11 @@
                     </div>
                     <div class="form-group">
                       <label for="">Tempat Tanggal Lahir</label>
-                      <input type="text" value="" class="form-control" disabled>
+                      <input type="text" value="03 November 2002" class="form-control" disabled>
                     </div>
                     <div class="form-group">
                       <label for="">Motto</label>
-                      <input type="text" value="" class="form-control" style="font-style:italic" disabled>
+                      <input type="text" value="Berbuat baiklah tanpa perlu alasan" class="form-control" style="font-style:italic" disabled>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@
                     </div>
                     <div class="form-group">
                       <label for="">Motto</label>
-                      <input type="text" value="" class="form-control" style="font-style:italic" disabled>
+                      <textarea type="text" class="form-control" style="font-style:italic" disabled>Jadilah seperti pohon kelapa yang seribu guna, dan jadilah orang yang beguna untuk sesama</textarea>
                     </div>
                 </div>
             </div>

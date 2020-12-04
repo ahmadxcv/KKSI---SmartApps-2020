@@ -34,7 +34,8 @@ class JawabanController extends Controller
      */
     public function create()
     {
-        //
+        $soals = Soal::latest()->paginate(5);
+        return view('siswa.daftarsoal', compact('soals'));
     }
 
     /**
