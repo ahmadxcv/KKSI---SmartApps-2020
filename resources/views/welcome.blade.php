@@ -38,162 +38,282 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        /*!
+ * Start Bootstrap - Landing Page v5.0.9 (https://startbootstrap.com/theme/landing-page)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+        body {
+            font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
         }
 
-      }
-      /*
- * Globals
- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700
+        }
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
+        header.masthead {
+            position: relative;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(25deg, rgba(2, 0, 36, 1) 0%, rgba(21, 121, 9, 1) 35%, rgba(0, 212, 255, 1) 100%);
+            background-size: cover;
+            padding-top: 8rem;
+            padding-bottom: 8rem
+        }
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: white;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: black;
-  border: .05rem solid #fff;
-}
+        header.masthead .overlay {
+            position: absolute;
+            background-color: #212529;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: .3
+        }
 
+        header.masthead h1 {
+            font-size: 2rem
+        }
 
-/*
- * Base structure
- */
+        @media (min-width:768px) {
+            header.masthead {
+                padding-top: 12rem;
+                padding-bottom: 12rem
+            }
 
-html,
-body {
-  height: 100%;
-  background: #778899;
-}
+            header.masthead h1 {
+                font-size: 3rem
+            }
+        }
 
-body {
-  display: -ms-flexbox;
-  display: flex;
-  color: black;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-}
+        .showcase .showcase-text {
+            padding: 3rem
+        }
 
-.cover-container {
-  max-width: 42em;
-}
+        .showcase .showcase-img {
+            min-height: 30rem;
+            background-size: cover
+        }
 
+        @media (min-width:768px) {
+            .showcase .showcase-text {
+                padding: 7rem
+            }
+        }
 
-/*
- * Header
- */
-.masthead {
-  margin-bottom: 2rem;
-}
+        .features-icons {
+            padding-top: 7rem;
+            padding-bottom: 7rem
+        }
 
-.masthead-brand {
-  margin-bottom: 0;
-}
+        .features-icons .features-icons-item {
+            max-width: 20rem
+        }
 
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: blue;
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
+        .features-icons .features-icons-item .features-icons-icon {
+            height: 7rem
+        }
 
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
+        .features-icons .features-icons-item .features-icons-icon i {
+            font-size: 4.5rem
+        }
 
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
+        .features-icons .features-icons-item:hover .features-icons-icon i {
+            font-size: 5rem
+        }
 
-.nav-masthead .active {
-  color: black;
-  border-bottom-color: white;
-}
+        .testimonials {
+            padding-top: 7rem;
+            padding-bottom: 7rem
+        }
 
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
+        .testimonials .testimonial-item {
+            max-width: 18rem
+        }
 
+        .testimonials .testimonial-item img {
+            max-width: 12rem;
+            box-shadow: 0 5px 5px 0 #adb5bd
+        }
 
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
+        .call-to-action {
+            position: relative;
+            background-color: #343a40;
+            background: url(../img/bg-masthead.jpg) no-repeat center center;
+            background-size: cover;
+            padding-top: 7rem;
+            padding-bottom: 7rem
+        }
 
+        .call-to-action .overlay {
+            position: absolute;
+            background-color: #212529;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: .3
+        }
 
-/*
- * Footer
- */
-.mastfoot {
-  color: rgba(255, 255, 255, .5);
-}
+        footer.footer {
+            padding-top: 4rem;
+            padding-bottom: 4rem
+        }
+
     </style>
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-pinggir.png') }}" alt="logo-pinggir.png" width="80" height="30"></a>
+            <div>
+                <a class="btn btn-primary btn-sm" href="{{ route('login') }}">Masuk</a>
+                <a class="btn btn-info btn-sm" href="{{ route('register') }}">Daftar</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Selamat Datang Di Aplikasi SiCerDik</h1>
+                    <p>Sicerdik merupakan aplikasi yang dapat membantu siswa/siswi, juga dapat menghubungkan antara guru dan siswa melalui aplikasi ini dalam kegitan proses pembelajaran dan memepermudah para guru dalam penugasan, penilaian, dan evaluasi. selain itu aplikasi ini bisa meningkatkan minat belajar siswa, karna terdapat sebuah reward dalam aplikasi ini dengan cara penukaran poin yang di peroleh dari pengisian soal.</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <img src="{{ asset('img/logo.pinggir.png') }}" alt="" height="60" widht="120" class="masthead-brand">
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Tentang</a>
-        <a class="nav-link active" href="#">Kontak</a>
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="text-center mb-3">
+                            <img src="{{ asset('img/logo-kemendikbud.png') }}" alt="" width="140" height="120" class="mr-auto">
+                        </div>
+                        <h3>KEMENDIKBUD</h3>
+                        <p class="lead mb-0">Kementerian Pendidikan dan Kebudayaan</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="text-center mb-3">
+                            <img src="{{ asset('img/kksi.jpeg') }}" alt="" width="140" height="120" class="mr-auto">
+                        </div>
+                        <h3>KKSI</h3>
+                        <p class="lead mb-0">Kamp Kreatif Sekolah Indonesia</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="text-center mb-3">
+                            <img src="{{ asset('img/smart-school.jpeg') }}" alt="" width="140" height="120" class="mr-auto">
+                        </div>
+                        <h3>Smart Schools</h3>
+                        <p class="lead mb-0">KKSI - Bidang Smart School</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="text-center mb-3">
+                            <img src="{{ asset('img/logo-smk.png') }}" alt="" width="140" height="120" class="mr-auto">
+                        </div>
+                        <h3>SMK PAY</h3>
+                        <p class="lead mb-0">SMK Plus Ashabulyamin Cianjur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      </nav>
-    </div>
-  </header>
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+        <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Pembimbing</h2>
+                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>UI / UX Designer</h2>
+                    <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Frontend</h2>
+                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Backend</h2>
+                    <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">SiCerDik</h1>
-    <p class="lead">Jadikan Belajarmu lebih mudah dan menyenangkan bersama SiCerDik.</p>
-    <p class="lead">sicerdik merupakan aplikasi yang dapat membantu siswa/i,
-    juga dapat menghubungkan antara guru dan siswa melalui aplikasi ini
-    dalam kegitan proses pembelajaran dan memepermudah para guru dalam penugasan, penilaian, dan evaluasi.
-    selain itu aplikasi ini bisa meningkatkan minat belajar siswa, karna terdapat sebuah reward dalam aplikasi ini
-    dengan cara penukaran poin yang di peroleh dari pengisian soal.</p>
-    <p class="lead">
-      <a href="{{ route('login') }}" class="btn btn-lg btn btn-outline-light border-dark ">Masuk</a>
-      <a href="{{ route('register') }}" class="btn btn-lg btn btn-outline-light border-dark">Daftar</a>
-    </p>
-  </main>
-
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    </div>
-  </footer>
-</div>
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Contact</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-instagram fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
