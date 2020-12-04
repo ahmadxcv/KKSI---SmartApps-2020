@@ -266,15 +266,15 @@
                     <h2>UI / UX Designer</h2>
                     <div class="form-group">
                       <label for="">Nama</label>
-                      <input type="text" value="Yulia " class="form-control" disabled>
+                      <input type="text" value="Yulia Sheila Maulida" class="form-control" disabled>
                     </div>
                     <div class="form-group">
                       <label for="">Tempat Tanggal Lahir</label>
-                      <input type="text" value="" class="form-control" disabled>
+                      <input type="text" value="08 Juli 2002" class="form-control" disabled>
                     </div>
                     <div class="form-group">
                       <label for="">Motto</label>
-                      <input type="text" value="" class="form-control" style="font-style:italic" disabled>
+                      <textarea type="text" class="form-control" style="font-style:italic" disabled>Orang yang belajar dari kesalahan dalah orang yang berani sukses.</textarea>
                     </div>
                 </div>
             </div>
